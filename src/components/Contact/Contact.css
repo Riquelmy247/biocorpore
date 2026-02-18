@@ -1,0 +1,101 @@
+.contact {
+  padding: 5rem 1.5rem;
+  background: var(--color-beige);
+}
+
+.contact__container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact.visible .contact__content {
+  animation: contactReveal 0.8s ease forwards;
+}
+
+.contact__title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 3rem;
+}
+
+.contact__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact__block h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact__block p {
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+.contact__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: #25D366;
+  color: var(--color-white) !important;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.contact__whatsapp:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.contact__instagram {
+  color: var(--color-accent) !important;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.contact__instagram:hover {
+  color: var(--color-accent-hover) !important;
+}
+
+.contact__map {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  min-height: 250px;
+}
+
+.contact__map iframe {
+  display: block;
+}
+
+@keyframes contactReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .contact__content {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}

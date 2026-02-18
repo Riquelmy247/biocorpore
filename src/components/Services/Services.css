@@ -1,0 +1,122 @@
+.services {
+  padding: 5rem 1.5rem;
+  background: var(--color-beige);
+}
+
+.services__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services.visible .services__title,
+.services.visible .services__subtitle {
+  animation: servicesReveal 0.6s ease forwards;
+}
+
+.services.visible .services__card {
+  animation: cardReveal 0.7s ease forwards;
+}
+
+.services__title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.services__subtitle {
+  text-align: center;
+  color: var(--color-text-light);
+  margin-bottom: 3rem;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.services__card {
+  background: var(--color-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.services__card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.services__card-image {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+.services__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.services__card:hover .services__card-image img {
+  transform: scale(1.03);
+}
+
+.services__card-content {
+  padding: 1.5rem;
+}
+
+.services__card-title {
+  font-size: 1.25rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.services__card-description {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+@keyframes cardReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes servicesReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 640px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .services__card:nth-child(5) {
+    grid-column: span 2;
+  }
+
+  .services__card:nth-child(5) .services__card-image {
+    aspect-ratio: 2/1;
+  }
+}
