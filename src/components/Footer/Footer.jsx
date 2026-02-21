@@ -26,7 +26,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer__bottom">
-        <p>&copy; {new Date().getFullYear()} {company.name}. Desenvolvido por Riquelmy M.</p>
+        <p>&copy; {new Date().getFullYear()} {company.name}. Todos os direitos reservados. Desenvolvido por @riquelmy_2612.</p>
       </div>
     </footer>
   );
